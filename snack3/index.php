@@ -39,6 +39,9 @@ $posts = [
         ]
     ],
 ];
+
+$keys = array_keys($posts);
+$values = array_values($posts);
 ?>
 
 <!DOCTYPE html>
@@ -52,15 +55,17 @@ $posts = [
 <body>
     <main>
 
-    <?php foreach($posts as $post => $values) { ?>
+    <?php for ($i = 0; $i < count($keys); $i++) {?>
 
+        
         <div>
-            <h1><?php echo $post ?></h1>
-             <?php foreach($values as $value) { ?>
+            <h1><?php echo $keys[$i] ?></h1>
+
+             <?php for($j = 0; $j < count($values[$i]); $j++) {  ?>
                 <p>
-                    <?php echo $value['title']. "<br>" ?>
-                    <?php echo $value['author']. "<br>" ?>
-                    <?php echo $value['text']. "<br>" ?>
+                    <?php echo $values[$i][$j]['title']. "<br>" ?>
+                    <?php echo $values[$i][$j]['author']. "<br>" ?>
+                    <?php echo $values[$i][$j]['text']. "<br>" ?>
                 </p>
             <?php }?>
         </div>

@@ -47,15 +47,15 @@
     <main>
         <p class="gray">
             <?php 
-                foreach ($db['teachers'] as $teacher) {
-                    echo $teacher['name'] . " " . $teacher['lastname'] . '<br>';
+                for ($i = 0; $i < count($db['teachers']); $i++) {
+                    echo $db['teachers'][$i]['name'] . " " . $db['teachers'][$i]['lastname'] . '<br>';
                 }
             ?>
         </p>
         <p class="green">
                 <?php 
-                foreach ($db['pm'] as $pm) {
-                    echo $pm['name'] . " " . $pm['lastname'] . '<br>';
+                for ($i = 0; $i < count($db['pm']); $i++) {
+                    echo $db['pm'][$i]['name'] . " " . $db['pm'][$i]['lastname'] . '<br>';
                 }
             ?>
         </p>
